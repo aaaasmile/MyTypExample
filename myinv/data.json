@@ -1,0 +1,19 @@
+{
+    "contact_no": "123456",
+    "contract_no": "CTR12340",
+    "invoice_no": "LERP3344",
+    "bank_details": {
+        "iban": "DE89370400440532013000",
+        "name": "Banco Ambrosiano"
+    },
+    "sender":{
+        "line1" : "Neck Rosso",
+        "line2" : "Freiheitstraße 12",
+        "line3" : "1120 Wien"
+    },
+    "reciver":{
+        "line1" : "Max Company",
+        "line2" : "Armutstraße 25",
+        "line3" : "1230 Wien"
+    }
+}
