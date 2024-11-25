@@ -10,10 +10,10 @@ Set _typst.exe_ into the path
 ### Documentation
 https://typst.app/docs
 
-### Viual Code
+### Visual Code
 I have created these examples using Visual Code with the extension "Typst LSP" from Nathan Varner.
 Inside the integrated terminal I use the _watch_ command. For example:
 
     cd .\myinv\
     typst.exe watch .\layout-data.ty
-The generated pdf file could be seen inside the browser with "Open Externally".
+The generated pdf file layout-data.pdf could be seen inside the browser with "Open Externally".
