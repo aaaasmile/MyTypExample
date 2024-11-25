@@ -1,3 +1,5 @@
+#let data_dct = json("data.json")
+
 #let get_footer_text(dataj) = {
     dataj.bank_details.name + " - " + dataj.bank_details.iban
 }
@@ -32,16 +34,38 @@
 
     #v(10em)
     Form without signature
-]// end do_report
+]// end do_report_en
+
+#let do_report_de(dataj) = block[
+    // TODO DE layout
+    to be done DE
+]// end do_report_de
+
+#let do_report_fr(dataj) = block[
+    // TODO DE layout
+    to be done FR
+]// end do_report_de
+
+#let select_lang_layout(dataj) = {
+    if dataj.language == "de"{
+        do_report_de(dataj)
+    } else if dataj.language == "fr"{
+        do_report_fr(dataj)
+    } else {
+        do_report_en(dataj)
+    }
+}
 
 #set page(
     //margin: (bottom: 15pt),
     footer: context [
         #set align(center)
         #set text(8pt)
-        #get_footer_text(json("data.json"))
+        #get_footer_text(data_dct)
     ]
 )
 
-#do_report_en(json("data.json"))
+#select_lang_layout(data_dct)
+
+
 
