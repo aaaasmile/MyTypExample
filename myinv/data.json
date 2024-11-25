@@ -1,6 +1,6 @@
 {
     "contact_no": "123456",
-    "contract_no": "CTR12340",
+    "contract_no": "C/24 12340",
     "invoice_no": "LERP3344",
     "bank_details": {
         "iban": "DE89370400440532013000",
@@ -15,5 +15,11 @@
         "line1" : "Max Company",
         "line2" : "Armutstraße 25",
         "line3" : "1230 Wien"
+    },
+    "date_sig": "Wien, 12 December 2024",
+    "salutation": "Dear Max,",
+    "add_charg": {
+        "amount": "234'567.00",
+        "currency": "USD"
     }
 }

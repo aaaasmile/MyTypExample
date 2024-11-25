@@ -7,30 +7,38 @@
     ]
 )
 
+#let do_report(dataj) = block[
+
 #box(height: 8em)[
     #columns(2, gutter: 25em)[
-        Gianni Togni \
-        Via della libertà \
-        1100 Wien \
+        #dataj.sender.line1 \
+        #dataj.sender.line2 \
+        #dataj.sender.line3 \
         #colbreak()
-        Luz De Gan \
-        Via dei Arrostei \
-        1230 Wien \
+        #dataj.reciver.line1 \
+        #dataj.reciver.line2 \
+        #dataj.reciver.line3 \
     ]
 ]
 
 #align(right)[ 
-    Wien, 12 December 2024
+    #dataj.date_sig
 ]
 #v(2em)
 #strong(text(14pt)[
   Our reference
-]): 12334 \
-Contract No: 574633 \
+]): #dataj.invoice_no \
+Contract No: #dataj.contract_no \
 #v(2em)
-Dear Sir\
+#dataj.salutation\
 #v(2em)
-#lorem(50)
+After a long thinking process, we would like to infor you that an unexpected expense
+is charged to you. It is an amount of *#dataj.add_charg.amount* #dataj.add_charg.currency.
+Please pay as soon as possible otherwise we have to inform Macellos Wallace.
 
 #v(10em)
 Form without signature
+
+]
+
+#do_report(json("data.json"))
