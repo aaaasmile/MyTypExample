@@ -1,3 +1,7 @@
+#let get_footer_text(dataj) = {
+    dataj.bank_details.name + " - " + dataj.bank_details.iban
+}
+
 #let do_report_en(dataj) = block[
     #box(height: 8em)[
         #columns(2, gutter: 25em)[
@@ -28,11 +32,16 @@
 
     #v(10em)
     Form without signature
-
-    #v(22em)
-    #align(center)[#text(8pt)[
-        #dataj.bank_details.name - IBAN #dataj.bank_details.iban
-    ]]
 ]// end do_report
 
+#set page(
+    //margin: (bottom: 15pt),
+    footer: context [
+        #set align(center)
+        #set text(8pt)
+        #get_footer_text(json("data.json"))
+    ]
+)
+
 #do_report_en(json("data.json"))
+
