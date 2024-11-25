@@ -32,9 +32,9 @@ Contract No: #dataj.contract_no \
 #v(2em)
 #dataj.salutation\
 #v(2em)
-After a long thinking process, we would like to infor you that an unexpected expense
+After a long thinking process we would like to inform you, that an unexpected expense
 is charged to you. It is an amount of *#dataj.add_charg.amount* #dataj.add_charg.currency.
-Please pay as soon as possible otherwise we have to inform Macellos Wallace.
+Please pay in cash as soon as possible, otherwise we have to inform Macellos Wallace.
 
 #v(10em)
 Form without signature
