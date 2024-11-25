@@ -1,10 +1,10 @@
 #let data_dct = json("data.json")
 
-#let get_footer_text(dataj) = {[
-    #dataj.bank_details.name - #dataj.bank_details.iban
-]}
+#let get_footer_text(dataj) = {
+    dataj.bank_details.name + " - " + dataj.bank_details.iban
+}
 
-#let do_report(dataj) = block[
+#let do_report_en(dataj) = block[
     #box(height: 8em)[
         #columns(2, gutter: 25em)[
             #dataj.sender.line1 \
@@ -34,7 +34,27 @@
 
     #v(10em)
     Form without signature
-]// end do_report
+]// end do_report_en
+
+#let do_report_de(dataj) = block[
+    // TODO DE layout
+    to be done DE
+]// end do_report_de
+
+#let do_report_fr(dataj) = block[
+    // TODO DE layout
+    to be done FR
+]// end do_report_de
+
+#let select_lang_layout(dataj) = {
+    if dataj.language == "de"{
+        do_report_de(dataj)
+    } else if dataj.language == "fr"{
+        do_report_fr(dataj)
+    } else {
+        do_report_en(dataj)
+    }
+}
 
 #set page(
     //margin: (bottom: 15pt),
@@ -45,7 +65,7 @@
     ]
 )
 
-#do_report(data_dct)
+#select_lang_layout(data_dct)
 
 
 
