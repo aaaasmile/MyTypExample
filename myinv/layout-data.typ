@@ -1,35 +1,35 @@
-#let data_dct = json("data.json")
+#let g_data_dct = json("data.json")
 
-#let get_footer_text(dataj) = {[
-    #dataj.bank_details.name - #dataj.bank_details.iban
+#let get_footer_text() = {[
+    #g_data_dct.bank_details.name - #g_data_dct.bank_details.iban
 ]}
 
-#let do_report(dataj) = block[
+#let do_report() = block[
     #box(height: 8em)[
         #columns(2, gutter: 25em)[
-            #dataj.sender.line1 \
-            #dataj.sender.line2 \
-            #dataj.sender.line3 \
+            #g_data_dct.sender.line1 \
+            #g_data_dct.sender.line2 \
+            #g_data_dct.sender.line3 \
             #colbreak()
-            #dataj.reciver.line1 \
-            #dataj.reciver.line2 \
-            #dataj.reciver.line3 \
+            #g_data_dct.reciver.line1 \
+            #g_data_dct.reciver.line2 \
+            #g_data_dct.reciver.line3 \
         ]
     ]
 
     #align(right)[ 
-        #dataj.date_sig
+        #g_data_dct.date_sig
     ]
     #v(2em)
     #strong(text(14pt)[
     Our reference
-    ]): #dataj.invoice_no \
-    Contract No: #dataj.contract_no \
+    ]): #g_data_dct.invoice_no \
+    Contract No: #g_data_dct.contract_no \
     #v(2em)
-    #dataj.salutation\
+    #g_data_dct.salutation\
     #v(2em)
     After a long thinking process we would like to inform you, that an unexpected expense
-    is charged to you. It is an amount of *#dataj.add_charg.amount* #dataj.add_charg.currency. Of course, peanuts for you.\
+    is charged to you. It is an amount of *#g_data_dct.add_charg.amount* #g_data_dct.add_charg.currency. Of course, peanuts for you.\
     Please avoid to discuss this amount and pay in cash as soon as possible, otherwise we have to inform Marsellus Wallace.
 
     #v(10em)
@@ -41,11 +41,11 @@
     footer: context [
         #set align(center)
         #set text(8pt)
-        #get_footer_text(data_dct)
+        #get_footer_text()
     ]
 )
 
-#do_report(data_dct)
+#do_report()
 
 
 
