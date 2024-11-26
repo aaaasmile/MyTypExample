@@ -30,7 +30,7 @@
     #v(2em)
     After a long thinking process we would like to inform you, that an unexpected expense
     is charged to you. It is an amount of *#g_data_dct.add_charg.amount* #g_data_dct.add_charg.currency. Of course, peanuts for you.\
-    Please avoid to discuss this amount and pay in cash as soon as possible, otherwise we have to inform Marsellus Wallace.
+    Please avoid to discuss this amount and pay in cash (feel free to use the usual envelop) as soon as possible, otherwise we have to inform Marsellus Wallace. 
 
     #v(10em)
     Form without signature
