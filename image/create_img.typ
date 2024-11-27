@@ -1,4 +1,7 @@
-#import "@preview/based:0.2.0": base64
+//#import "@preview/based:0.2.0": base64
+// download from https://typst.app/universe/package/based
+#import "@local/based:0.2.0": base64 // local repo in %appdata%\typst\packages\local\based\0.2.0
+
 #import "@preview/tiaoma:0.2.1"
 
 #set page(width: auto, height: auto, margin: 0pt)
@@ -9,5 +12,5 @@
 
 #image.decode(raw-image, format: "png")
 
-#tiaoma.ean("1234567890128")
-#tiaoma.barcode("1234567890128", "QRCode")
+#tiaoma.ean("1234567890128")\
+#tiaoma.barcode(lorem(105), "QRCode")
