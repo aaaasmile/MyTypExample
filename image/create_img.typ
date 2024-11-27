@@ -4,6 +4,8 @@
 
 #import "@preview/tiaoma:0.2.1"
 
+// per vedere i font installati: typst fonts --variants
+
 #set page(width: auto, height: auto, margin: 0pt)
 
 // `base64 -w 0 smile.png` (10x10):
@@ -14,3 +16,15 @@
 
 #tiaoma.ean("1234567890128")\
 #tiaoma.barcode(lorem(105), "QRCode")
+
+#grid(
+  columns: (15em, 10em),
+  //column-gutter: 2em,
+  //block(width: 100%, height: 3em, stroke: 1pt),
+  //grid.vline(stroke: 0.5pt),
+  grid.cell(align: left, [AAA]),
+  //block(width: 100%, height: 3em, stroke: 1pt),
+  grid.cell(align: right, [BBB]),
+)
+
+#v(1em)
