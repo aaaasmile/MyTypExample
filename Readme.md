@@ -17,3 +17,4 @@ Inside the integrated terminal I use the _watch_ command. For example:
     cd .\myinv\
     typst.exe watch .\layout-data.ty
 The generated pdf file layout-data.pdf could be seen inside the browser with "Open Externally".
+Extension is on: https://www.open-vsx.org/extension/nvarner/typst-lsp
