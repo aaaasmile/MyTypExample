@@ -15,29 +15,42 @@
 #image.decode(raw-image, format: "png")
 
 #tiaoma.ean("1234567890128")\
+
+#place(right, dx: -25pt)[
+    #grid(
+    columns: (auto, auto),
+    column-gutter: 2em,
+    row-gutter: 0.7em,
+    [PLZ],
+    [Stadt],
+    [1100],
+    [Wien])
+]
+
 #tiaoma.barcode(lorem(105), "QRCode")
-
-#grid(
-  columns: (auto, auto),
-  column-gutter: 10em,
-  row-gutter: 0.7em,
-  //block(width: 100%, height: 3em, stroke: 1pt),
-  //grid.vline(stroke: 0.5pt),
-  grid.cell(align: left, [Name]),
-  //block(width: 100%, height: 3em, stroke: 1pt),
-  grid.cell(align: left, [Max]),
-  [Tel:],
-  [+456688329999],
-)
-
+#v(1em)
+#place(left, dx: 25pt)[
+    #grid(
+    columns: (auto, auto),
+    column-gutter: 10em,
+    row-gutter: 0.7em,
+    //block(width: 100%, height: 3em, stroke: 1pt),
+    //grid.vline(stroke: 0.5pt),
+    grid.cell(align: left, [Name]),
+    //block(width: 100%, height: 3em, stroke: 1pt),
+    grid.cell(align: left, [Max]),
+    [Tel:],
+    [+456688329999])
+]
+#v(4em) // no space in vertical with place
 CCC #h(1fr) DDD  \
 EEE #h(1fr) FFF #h(2fr) GGG \
 
 #v(1em)
 #align(right + bottom)[
-#block(width: auto, height: auto, stroke: 1pt, 
-fill: luma(128), radius: 5pt, inset: 3pt, 
-outset: 5pt, spacing: 10pt, above: 10em, below: 5em, clip: true, 
-[form no sign lol])
+    #block(width: auto, height: auto, stroke: 1pt, 
+    fill: luma(128), radius: 5pt, inset: 3pt, 
+    outset: 5pt, spacing: 10pt, above: 10em, below: 5em, clip: true, 
+    [form no sign lol])
 ]
 #v(1em)
