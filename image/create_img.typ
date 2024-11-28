@@ -6,7 +6,7 @@
 
 // per vedere i font installati: typst fonts --variants
 
-#set page(width: auto, height: auto, margin: 0pt)
+#set page( margin: 0pt)
 
 // `base64 -w 0 smile.png` (10x10):
 #let base64-encoded-image = "iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAC4jAAAuIwF4pT92AAAASUlEQVQYGa3OWwoAIAgEQNf739k0EjVCfxKCHtMqiEh0jcWjOKBAkQjPe7MFdun/IbRdDNb05nvolzWzEx0DdozK96W1PzjNHxcgphkBs9CoHwAAAABJRU5ErkJggg=="
@@ -18,13 +18,26 @@
 #tiaoma.barcode(lorem(105), "QRCode")
 
 #grid(
-  columns: (15em, 10em),
-  //column-gutter: 2em,
+  columns: (auto, auto),
+  column-gutter: 10em,
+  row-gutter: 0.7em,
   //block(width: 100%, height: 3em, stroke: 1pt),
   //grid.vline(stroke: 0.5pt),
-  grid.cell(align: left, [AAA]),
+  grid.cell(align: left, [Name]),
   //block(width: 100%, height: 3em, stroke: 1pt),
-  grid.cell(align: right, [BBB]),
+  grid.cell(align: left, [Max]),
+  [Tel:],
+  [+456688329999],
 )
 
+CCC #h(1fr) DDD  \
+EEE #h(1fr) FFF #h(2fr) GGG \
+
+#v(1em)
+#align(right + bottom)[
+#block(width: auto, height: auto, stroke: 1pt, 
+fill: luma(128), radius: 5pt, inset: 3pt, 
+outset: 5pt, spacing: 10pt, above: 10em, below: 5em, clip: true, 
+[form no sign lol])
+]
 #v(1em)
